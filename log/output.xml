@@ -1,56 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230323 19:23:22.811" rpa="false" schemaversion="3">
-<suite id="s1" name="LandingPageNavigate" source="C:\Users\Onur\Documents\RobotFrameworkBoilerPlate\Tests\LandingPageNavigate.robot">
-<test id="s1-t1" name="Navigate the Page" line="9">
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230323 19:44:04.359" rpa="false" schemaversion="3">
+<suite id="s1" name="ABTesting" source="C:\Users\Onur\Documents\RobotFrameworkBoilerPlate\Tests\ABTesting.robot">
+<test id="s1-t1" name="Navigate the AB Testing Page" line="11">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>about:blank</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230323 19:23:22.943" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20230323 19:23:22.943" endtime="20230323 19:23:24.039"/>
+<msg timestamp="20230323 19:44:04.477" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230323 19:44:04.477" endtime="20230323 19:44:05.511"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230323 19:23:24.039" endtime="20230323 19:23:24.159"/>
+<status status="PASS" starttime="20230323 19:44:05.511" endtime="20230323 19:44:05.622"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${landind_page}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230323 19:23:24.159" level="INFO">Opening url 'http://the-internet.herokuapp.com/'</msg>
-<status status="PASS" starttime="20230323 19:23:24.159" endtime="20230323 19:23:26.730"/>
+<msg timestamp="20230323 19:44:05.622" level="INFO">Opening url 'http://the-internet.herokuapp.com/'</msg>
+<status status="PASS" starttime="20230323 19:44:05.622" endtime="20230323 19:44:07.502"/>
 </kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20230323 19:23:26.822" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20230323 19:23:26.730" endtime="20230323 19:23:26.838"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:[href="/abtest"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 19:44:07.502" level="INFO">Clicking element 'css:[href="/abtest"]'.</msg>
+<status status="PASS" starttime="20230323 19:44:07.502" endtime="20230323 19:44:07.741"/>
 </kw>
 <kw name="Get Location" library="SeleniumLibrary">
 <var>${current_url}</var>
 <doc>Returns the current browser window URL.</doc>
-<msg timestamp="20230323 19:23:26.838" level="INFO">${current_url} = http://the-internet.herokuapp.com/</msg>
-<status status="PASS" starttime="20230323 19:23:26.838" endtime="20230323 19:23:26.838"/>
+<msg timestamp="20230323 19:44:07.744" level="INFO">${current_url} = http://the-internet.herokuapp.com/abtest</msg>
+<status status="PASS" starttime="20230323 19:44:07.741" endtime="20230323 19:44:07.744"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${current_url}</arg>
-<arg>${landind_page}</arg>
+<arg>${ab_testing_page}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20230323 19:23:26.838" endtime="20230323 19:23:26.838"/>
+<status status="PASS" starttime="20230323 19:44:07.744" endtime="20230323 19:44:07.745"/>
 </kw>
-<tag>Landing</tag>
-<status status="PASS" starttime="20230323 19:23:22.943" endtime="20230323 19:23:26.838"/>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>A/B Test Variation 1</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230323 19:44:07.847" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230323 19:44:07.847" level="FAIL">Page should have contained text 'A/B Test Variation 1' but did not.</msg>
+<status status="FAIL" starttime="20230323 19:44:07.745" endtime="20230323 19:44:07.847"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Also known as split testing.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20230323 19:44:07.847" endtime="20230323 19:44:07.847"/>
+</kw>
+<tag>AB</tag>
+<status status="FAIL" starttime="20230323 19:44:04.477" endtime="20230323 19:44:07.847">Page should have contained text 'A/B Test Variation 1' but did not.</status>
 </test>
 <doc>Navigate Page</doc>
-<status status="PASS" starttime="20230323 19:23:22.811" endtime="20230323 19:23:26.838"/>
+<status status="FAIL" starttime="20230323 19:44:04.363" endtime="20230323 19:44:07.847"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Landing</stat>
+<stat pass="0" fail="1" skip="0">AB</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="LandingPageNavigate">LandingPageNavigate</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="ABTesting">ABTesting</stat>
 </suite>
 </statistics>
 <errors>
