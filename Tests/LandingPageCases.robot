@@ -1,9 +1,11 @@
 *** Settings ***
-Documentation   Navigate Page
+Documentation   Landing Page Cases
 Library         SeleniumLibrary
+
 
 *** Variables ***
 ${landind_page}    http://the-internet.herokuapp.com/
+
 
 *** Test Cases ***
 Navigate the Page

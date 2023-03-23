@@ -1,6 +1,7 @@
 *** Settings ***
-Documentation   Navigate Page
+Documentation   AB Testing Cases
 Library         SeleniumLibrary
+
 
 *** Variables ***
 ${landind_page}         http://the-internet.herokuapp.com/
