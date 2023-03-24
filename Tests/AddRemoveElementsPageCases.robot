@@ -1,12 +1,12 @@
 *** Settings ***
 Documentation       Add/Remove Testing Cases
 Library             SeleniumLibrary
+Resource            ./../Resources/Common.robot
 Test Setup          Test Setup Actions
 Suite Teardown      Suite Teardown Actions
 
 
 *** Variables ***
-${landind_page}         http://the-internet.herokuapp.com/
 ${add_remove_page}      http://the-internet.herokuapp.com/add_remove_elements/
 ${expected_element}     css:button[onclick]
 ${delete}               css:.added-manually
@@ -59,13 +59,3 @@ Remove Element
     @{delete_buttons}=              Get WebElements     ${delete}
     ${size}=                        Get Length    ${delete_buttons}
     Should Be Equal As Integers     ${size}    3
-
-
-*** Keywords ***
-Test Setup Actions
-    Open Browser                    about:blank  chrome
-    Maximize Browser Window
-    Go To                           ${landind_page}
-
-Suite Teardown Actions
-    Close All Browsers
