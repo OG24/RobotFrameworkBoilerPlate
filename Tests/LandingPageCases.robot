@@ -1,13 +1,10 @@
 *** Settings ***
-Documentation   Landing Page Cases
-Library         SeleniumLibrary
+Documentation       Landing Page Cases
+Library             SeleniumLibrary
 Resource            ./../Resources/Common.robot
+Resource            ./../Resources/Pages/LandingPage.robot
 Test Setup          Test Setup Actions
 Suite Teardown      Suite Teardown Actions
-
-
-*** Variables ***
-${landind_page}    http://the-internet.herokuapp.com/
 
 
 *** Test Cases ***
