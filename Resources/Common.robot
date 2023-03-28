@@ -5,6 +5,7 @@ Library             SeleniumLibrary
 *** Variables ***
 ${landind_page}         http://the-internet.herokuapp.com/
 
+
 *** Keywords ***
 Test Setup Actions
     Open Browser                    about:blank  chrome
