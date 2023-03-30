@@ -43,7 +43,7 @@ Remove Element
         Click Add Button
     END
 
-    Click Delete Button     3
+    Click Delete Button             3
     ${size}=                        Get Delete Button Counts
     Should Be Equal As Integers     ${size}                             5
 
