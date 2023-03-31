@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation       Landing Page
-Resource            ./../Common.robot
+Resource            ${EXECDIR}/Resources/Common.robot
 
 *** Variables ***
 ${add_remove_page}      http://the-internet.herokuapp.com/add_remove_elements/

@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation       Landing Page
-Resource            ./../Common.robot
+Resource            ${EXECDIR}/Resources/Common.robot
 
 *** Variables ***
 ${landind_page}                 http://the-internet.herokuapp.com/
