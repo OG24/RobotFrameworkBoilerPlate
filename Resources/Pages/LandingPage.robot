@@ -9,8 +9,8 @@ ${add_remove_page_link}         css:[href="/add_remove_elements/"]
 
 
 *** Keywords ***
-Click AB Testing Page
+LandingPage.Click AB Testing Page
     Click Element    ${AB_testing_page_link}
 
-Click Add Remove Page
+LandingPage.Click Add Remove Page
     Click Element    ${add_remove_page_link}

@@ -9,15 +9,15 @@ ${delete}               css:.added-manually
 
 
 *** Keywords ***
-Click Add Button
+AddRemovePage.Click Add Button
     Click Element    ${expected_element}
 
-Click Delete Button
+AddRemovePage.Click Delete Button
     [Arguments]     ${index}
     @{delete_buttons}=              Get WebElements     ${delete}
     Click Element                   ${delete_buttons}[${index}]
 
-Get Delete Button Counts
+AddRemovePage.Get Delete Button Counts
     @{delete_buttons}=              Get WebElements     ${delete}
     ${size}=                        Get Length          ${delete_buttons}
     RETURN                          ${size}
